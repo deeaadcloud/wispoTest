@@ -214,19 +214,27 @@
     .slick-dotted.slick-slider {
         margin-bottom: 20px;
     }
-
+    .slick-next {
+        right: 0px;
+    }
+    .slick-prev {
+        left: 0px;
+    }
     
 }
 
 @media (max-width:768px){
-    .slick-next {
-        right: -10px;
-    }
-    .slick-prev {
-        left: -10px;
-    }
+    
     .slick-prev.slick-arrow, .slick-next.slick-arrow {
         top: 35%;
+    }
+}
+@media (max-width:700px){
+    .slick-next {
+        right: 10px;
+    }
+    .slick-prev {
+        left: 10px;
     }
 }
 @media (max-width:414px){

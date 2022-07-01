@@ -5,7 +5,7 @@ function my_func() {
     var browserMaxWidth = parseInt($('.header_container').css('max-width'), 10);
 
     if (browserMaxWidth < 768) {
-        $('li:first-child').text('');
+        $(".main_button").text('');
     }
 
 }
@@ -14,7 +14,7 @@ my_func();
 $('.slider').slick({
     dots: true,
     infinite:false,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 1000,
     slidesToShow: 4,
     slidesToScroll: 3,
@@ -32,6 +32,13 @@ $('.slider').slick({
             breakpoint: 768,
             settings: {
                 slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 700,
+            settings: {
+                slidesToShow: 2,
                 slidesToScroll: 1
             }
         },

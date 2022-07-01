@@ -13,21 +13,21 @@
 
 <body>
     <header class="header">
-        <div class="header_container">
+        <div class="container">
             <div class="header_top">
                 <div class="header_main">
                     <div class="header_logo_mobile"></div>
                     <div class="header_logo">
-                        
+
                         <img src="./img/header/header-logo.svg " alt="">
-                        
+
                     </div>
-                    
+
                     <div class="header_list">
-                        <ul>
-                            <li>Контакты</li>
-                            <li>Отзывы </li>
-                            <li>Гарантия </li>
+                        <ul class="list_ul">
+                            <li class="list_li">Контакты</li>
+                            <li class="list_li">Отзывы </li>
+                            <li class="list_li">Гарантия </li>
                         </ul>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         Звоните, пн-вс 10:00 - 20:00
                     </div>
                     <div class="about_phone"><a href="tel:+73512207704">+7 351 220 77 04</a>
-                        
+
                     </div>
                 </div>
             </div>
@@ -44,26 +44,59 @@
                 <button onclick="myFunction()" class="dropbtn"></button>
                 <div id="myDropdown" class="dropdown-content">
                     <div class="menu_header">Меню</div>
-                        
-                  <a href="#">Ремонт Apple</a>
-                  <a href="#">Ремонт смартфонов</a>
-                  <a href="#">Ремонт планшетов</a>
-                  <a href="#">Ремонт ноутбуков</a>
-                  <a href="#">Ремонт игровых приставок</a>
+
+                    <a href="#">Ремонт Apple</a>
+                    <a href="#">Ремонт смартфонов</a>
+                    <a href="#">Ремонт планшетов</a>
+                    <a href="#">Ремонт ноутбуков</a>
+                    <a href="#">Ремонт игровых приставок</a>
                 </div>
                 <button class="header_call">Связаться</button>
-              </div>
-              
-            <div class="header_menu">
-                <ul>
-                    <li>Каталог</li>
-                    <li>Ремонт Apple <button class="apple_btn"> </button></li>
-                    <li>Ремонт смартфонов<button class="smarphone_btn"> </button></li>
-                    <li>Ремонт планшетов<button class="tablet_btn"> </button></li>
-                    <li>Ремонт ноутбуков<button class="notebook_btn"> </button></li>
-                </ul>
             </div>
-            
+
+            <div class="header_menu">
+                <div class="navbar1">
+                        <button onclick="myFunction()" class="main_button dropbtn"> Каталог</button>
+                        <div class="dropdown1">
+                            <button class=" apple_btn dropbtn1"> Ремонт Apple
+                            </button>
+                            <div class="dropdown-content1">
+                                <a href="#">Ремонт Apple</a>
+                                <a href="#">Ремонт Apple</a>
+                                <a href="#">Ремонт Apple</a>
+                            </div>
+                        </div>
+                        <div class="dropdown1 ">
+                            <button class="smarphone_btn dropbtn1"> Ремонт смартфонов
+                            </button>
+                            <div class="dropdown-content1">
+                                <a href="#">Ремонт смартфонов</a>
+                                <a href="#">Ремонт смартфонов</a>
+                                <a href="#">Ремонт смартфонов</a>
+                            </div>
+                        </div>
+                        <div class="dropdown1">
+                            <button class="tablet_btn dropbtn1"> Ремонт планшетов
+                            </button>
+                            <div class="dropdown-content1">
+                                <a href="#">Ремонт планшетов</a>
+                                <a href="#">Ремонт планшетов</a>
+                                <a href="#">Ремонт планшетов</a>
+                            </div>
+                        </div>
+                        <div class="dropdown1">
+                            <button class="notebook_btn dropbtn1"> Ремонт ноутбуков
+                            </button>
+                            <div class="dropdown-content1">
+                                <a href="#">Ремонт ноутбуков</a>
+                                <a href="#">Ремонт ноутбуков</a>
+                                <a href="#">Ремонт ноутбуков</a>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
         </div>
     </header>
     <div class="main">
@@ -75,7 +108,7 @@
                     </div>
                     <div class="banner_about">
                         Ремонт планшетов в Челябинске. Бесплатно продиагностируем и быстро починим любую поломку.
-                        Гарантия 3
+                        <br>Гарантия 3
                         месяца
                     </div>
                     <button class="banner_btn">
@@ -123,7 +156,7 @@
                 <img class="mobile" src="./img/main/banner/banner_main768px.png" alt="">
             </div>
         </div>
-        <div class="main_employee">
+        <div class="main_employee ">
             <div class="main_employee_container">
                 <div class="employee_title">
                     Ремонт осуществляется
@@ -185,11 +218,6 @@
                         <div class="slide_slogan2">Мы даем гарантию
                             и исполняем ее. На технику – это всегда год.</div>
                     </div>
-
-
-
-                    <!-- <button class="prev" id="prev"></button>
-                    <button class="next" id="next"></button> -->
                 </div>
                 <div class="main_services">
                     <div class="main_services_container">
@@ -212,7 +240,7 @@
                             </div>
                             <button class="servisec_btn">Показать адреса</button>
                         </div>
-                        
+
                         <img src="./img/main/services/2.png" class="main_services_img"></img>
                         <img src="./img/main/services/3.png" class="main_services_img"></img>
                     </div>
@@ -220,7 +248,7 @@
             </div>
         </div>
     </div>
-    
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/slick-1.8.1/slick/slick.min.js"></script>

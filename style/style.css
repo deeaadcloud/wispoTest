@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url(/2servicePage/style/font/);
+    src: url(../style/font/Montserrat-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -12,19 +14,21 @@
     src: url(../style/font/static/Montserrat-Bold.ttf);
 }
 
-body {
-    overflow-x: hidden;
+html, body {
     font-family: 'Montserrat';
     font-weight: 500;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
+    width: 100vw;
 
 }
 
-
+.hidden {
+    display: none;
+}
 
 header.header {
-    margin: 35px auto;
+    margin: 35px auto 0px;
     max-width: 1920px;
     width: 100%;
 
@@ -47,10 +51,10 @@ header.header::before {
 
 }
 
-.header_container {
+.container {
     display: flex;
     flex-direction: column;
-    margin: 35px 200px 20px;
+    margin: 35px 200px 0px;
     max-width: 1520px;
     justify-content: space-between;
 
@@ -147,15 +151,223 @@ header.header::before {
 }
 
 .header_menu {
-    margin-top: 40px;
+    margin-top: 32px;
     position: relative;
 }
 
-.dropdown {
+/* .dropdown {
+    display: none;
+} */
+
+.dropdown button {
     display: none;
 }
 
-.header_menu ul {
+.dropdown-content {
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    transition-delay: 0s;
+    z-index: 15;
+    min-width: 300px;
+
+}
+
+header.header::before {
+    display: none;
+}
+
+.dropdown-content.show {
+    overflow: auto;
+    transform: translateX(0%);
+    background: #fff;
+    position: fixed;
+    box-shadow: 0px 4px 18px 0px #0000000F;
+}
+
+.dropdown-content.show::-webkit-scrollbar {
+    width: 3px;
+}
+
+.dropdown-content.show::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #FFA400 0%, #FFCC00 100%);
+    border-radius: 20px;
+    border: 1px solid orange;
+}
+
+.dropdown-content a {
+    position: relative;
+    color: black;
+    padding: 24px 0 24px 54px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.dropdown-content a::after {
+    content: '';
+    position: absolute;
+    background-image: url(./../img/header/header-arrow.png);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 6px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.dropdown-content a:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    background-image: url(./../img/header/header-apple.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 100%;
+    margin-left: -27px;
+    margin-top: -2px;
+}
+
+.dropdown-content a:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    background-image: url(./../img/header/header-smartphone.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 19px;
+    height: 100%;
+    margin-left: -27px;
+    margin-top: -2px;
+}
+
+.dropdown-content a:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    background-image: url(./../img/header/header-tablet.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 19px;
+    height: 100%;
+    margin-left: -27px;
+    margin-top: -2px;
+}
+
+.dropdown-content a:nth-child(5)::before {
+    content: '';
+    position: absolute;
+    background-image: url(./../img/header/header-notebook.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 19px;
+    height: 100%;
+    margin-left: -27px;
+    margin-top: -2px;
+}
+
+.dropdown-content a:nth-child(6)::before {
+    content: '';
+    position: absolute;
+    background-image: url(./../img/header/header_console.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 19px;
+    height: 100%;
+    margin-left: -27px;
+    margin-top: 2px;
+}
+
+.menu_header {
+    padding: 15px 0 0 24px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.menu_header::after {
+    position: absolute;
+    content: '';
+    background-image: url(./../img/menu/close.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 100%;
+    right: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+.header_call {
+    display: none;
+}
+
+.navbar1 {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar1 a {
+    float: left;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown1 {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown1 .dropbtn1 {
+    font-size: 16px;
+    line-height: 19.5px;
+    border: none;
+    outline: none;
+    padding: 14px 0;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content1 a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content1 a:hover {
+    background-color: #ffbb0a;
+}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+}
+
+.main_button, .apple_btn, .smarphone_btn, .tablet_btn, .notebook_btn {
     margin: 0px;
     position: relative;
     list-style: none;
@@ -167,95 +379,138 @@ header.header::before {
 
 }
 
-.header_menu li {
+.main_button {
+    border: none;
+    background: transparent;
+}
+
+.main_button, .apple_btn, .smarphone_btn, .tablet_btn, .notebook_btn {
     position: relative;
     padding-left: 35px;
     text-align: center;
 }
 
-.header_menu li {
+
+.main_button {
+    padding-left: 36px;
+    padding-right: 5.526%;
     border-right: 1px solid #E5E5E5;
-
 }
 
-.header_menu li:nth-child(1) {
-    padding-right: 57px;
-}
-
-.header_menu li:nth-child(2),
-.header_menu li:nth-child(3),
-.header_menu li:nth-child(4),
-.header_menu li:nth-child(5) {
+.dropdown1 {
+    padding-left: 5.605%;
     padding-right: 5.5526%;
+    border-right: 1px solid #E5E5E5;
 }
 
 
-.header_menu li:nth-child(1):before {
+.header_menu .main_button::before {
     position: absolute;
     content: '';
     background-image: url(./../img/header/header-catalog.svg);
     width: 26px;
     height: 26px;
-    left: 0;
-    top: -2px;
+    left: 0px;
+    top: -5px;
 
 }
 
-.header_menu li:nth-child(2):before {
+.header_menu .apple_btn::before {
     position: absolute;
     content: '';
     background-image: url(./../img/header/header-apple.svg);
     width: 20px;
     height: 24px;
-    left: 0;
-    top: -5px;
+    left: -35px;
+    top: 10px;
 }
 
 
 
-.header_menu li:nth-child(3):before {
+.header_menu .smarphone_btn::before {
     position: absolute;
     content: '';
     background-image: url(./../img/header/header-smartphone.svg);
     width: 26px;
     height: 26px;
-    left: 0;
-    top: -5px;
+    left: -35px;
+    top: 10px;
 }
 
 
 
-.header_menu li:nth-child(4):before {
+.header_menu .tablet_btn:before {
     position: absolute;
     content: '';
     background-image: url(./../img/header/header-tablet.svg);
     width: 26px;
     height: 26px;
-    left: 0;
-    top: -5px;
+    left: -35px;
+    top: 10px;
 }
 
 
 
-.header_menu li:nth-child(5):before {
+.header_menu .notebook_btn:before {
     position: absolute;
     content: '';
     background-image: url(./../img/header/header-notebook.svg);
     width: 26px;
     height: 26px;
-    left: 0;
-    top: -5px;
+    left: -35px;
+    top: 10px;
 }
 
-.header_menu li>button {
+.dropdown1 button.apple_btn::after {
+    position: absolute;
+    content: '';
     border: none;
     background-color: inherit;
     background-image: url(./../img/header/header-arrow.png);
     background-repeat: no-repeat;
     width: 10px;
     height: 6px;
-    margin-left: 10px;
-    padding-top: 7px;
+    left: 135px;
+    top: 21px;
+}
+
+.dropdown1 button.smarphone_btn::after {
+    position: absolute;
+    content: '';
+    border: none;
+    background-color: inherit;
+    background-image: url(./../img/header/header-arrow.png);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 6px;
+    left: 175px;
+    top: 21px;
+}
+
+.dropdown1 button.tablet_btn::after {
+    position: absolute;
+    content: '';
+    border: none;
+    background-color: inherit;
+    background-image: url(./../img/header/header-arrow.png);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 6px;
+    left: 169px;
+    top: 21px;
+}
+
+.dropdown1 button.notebook_btn::after {
+    position: absolute;
+    content: '';
+    border: none;
+    background-color: inherit;
+    background-image: url(./../img/header/header-arrow.png);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 6px;
+    left: 164px;
+    top: 21px;
 }
 
 .main {
@@ -550,7 +805,7 @@ header.header::before {
 
 .slick-prev.slick-arrow, .slick-next.slick-arrow {
     top: 0;
-    top: 43%;
+    top: 40%;
     width: auto;
     cursor: pointer;
     position: absolute;
@@ -658,14 +913,11 @@ header.header::before {
 
 @media (max-width:1800px) {
 
-    .header_container {
+    .container {
         margin: 35px calc(144px + (200 - 144) * ((100vw - 1366px) / (1800 - 1366))) 20px;
     }
 
-    .header_menu li:nth-child(2),
-    .header_menu li:nth-child(3),
-    .header_menu li:nth-child(4),
-    .header_menu li:nth-child(5) {
+    .dropdown1 {
         padding-right: calc(59px + (84 - 59) * ((100vw - 1800px) / (1800-1366)));
     }
 
@@ -687,7 +939,7 @@ header.header::before {
 
     }
 
-    .header_container {
+    .container {
         display: flex;
         flex-direction: column;
         margin: 35px calc(87px + (144 - 87) * ((100vw - 1024px) / (1366 - 1024))) 20px;
@@ -700,25 +952,34 @@ header.header::before {
         display: none;
     }
 
-    .header_menu ul li:first-child {
+    .navbar1:first-child {
         font-size: 16px;
     }
 
-    .header_menu ul li {
+    .dropdown1 {
         font-size: 14px;
-    }
-
-    .header_menu li {
         border: none;
     }
 
-    .header_menu li:nth-child(2), .header_menu li:nth-child(3), .header_menu li:nth-child(4), .header_menu li:nth-child(5) {
-        padding-right: calc(30px + (59-30) * ((100vw - 1366px) / (1366 - 768)));
+    .dropdown1 button.apple_btn::after {
+        left: 120px;
     }
 
-    .header_menu li:nth-child(1):before {
+    .dropdown1 button.smarphone_btn::after {
+        left: 178px;
+    }
 
-        top: -5px;
+    .dropdown1 button.tablet_btn::after {
+        left: 167px;
+    }
+
+    .dropdown1 button.notebook_btn::after {
+        left: 171px;
+    }
+
+
+    .dropdown1 {
+        padding-right: calc(30px + (59-30) * ((100vw - 1366px) / (1366 - 768)));
     }
 
     .banner_title {
@@ -745,7 +1006,7 @@ header.header::before {
     }
 
     .banner_btn {
-        width: 342px;
+        max-width: 342px;
         background-size: cover;
         height: 69px;
         font-size: 16px;
@@ -887,7 +1148,7 @@ header.header::before {
 
     }
 
-    .header_container {
+    .container {
         margin: 18px calc(59px + (59 - 24) * ((100vw - 768px) / (1024 - 768))) 20px;
         max-width: 850px;
     }
@@ -927,13 +1188,33 @@ header.header::before {
         font-size: 14px;
     }
 
-    .header_menu li:first-child {
+    .main_button {
         border-right: 1px solid #E5E5E5;
         padding-right: 28px;
     }
 
-    .header_menu li:nth-child(2), .header_menu li:nth-child(3), .header_menu li:nth-child(4), .header_menu li:nth-child(5) {
-        padding-right: 0px;
+    .dropdown1 {
+        padding-right: 20px;
+    }
+
+    .navbar1 {
+        width: 89.007vw;
+    }
+
+    .dropdown1 button.apple_btn::after {
+        left: 120px;
+    }
+
+    .dropdown1 button.smarphone_btn::after {
+        left: 178px;
+    }
+
+    .dropdown1 button.tablet_btn::after {
+        left: 167px;
+    }
+
+    .notebook_btn {
+        display: none;
     }
 
     .header_menu li:nth-child(1):before {
@@ -967,7 +1248,7 @@ header.header::before {
     }
 
     .banner_btn {
-        width: 290px;
+        max-width: 290px;
         background-size: cover;
         height: 62px;
         font-size: 14px;
@@ -1072,7 +1353,7 @@ header.header::before {
     .slide_about {
         max-width: 190px;
         font-size: 14px;
-        height: 57px;
+        height: 85px;
         line-height: 17px;
     }
 
@@ -1164,9 +1445,6 @@ header.header::before {
 }
 
 @media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
 
     header.header {
         margin: 0px auto;
@@ -1174,7 +1452,7 @@ header.header::before {
 
     }
 
-    .header_container {
+    .container {
         margin: 18px calc(24px + (24 - 0) * ((100vw - 356px) / (768 - 356))) 20px;
         max-width: 650px;
     }
@@ -1206,17 +1484,32 @@ header.header::before {
         display: none;
     }
 
-    .header_menu ul li:first-child {
+
+    .dropdown1 {
+        padding-left: 9.605%;
+        padding-right: 0.013%;
+    }
+
+    .dropdown1:last-child {
+        display: none;
+    }
+
+    .main_button {
         font-size: 16px;
     }
 
-    .header_menu ul li {
+    .dropdown1 .dropbtn1 {
         font-size: 1.822vw;
     }
 
-    .header_menu li:first-child {
+    .main_button {
         border-right: 1px solid #E5E5E5;
-        padding-right: 25px;
+        padding-right: 3.65%;
+        height: 15px;
+    }
+
+    .header_menu .main_button::before {
+        top: -5px;
     }
 
     .header_menu li:nth-child(1):before {
@@ -1241,7 +1534,7 @@ header.header::before {
         height: 100%;
     }
 
-    .header_menu li>button {
+    .header_menu .apple_btn::after, .header_menu .smarphone_btn::after, .header_menu .tablet_btn::after, .header_menu .notebook_btn::after {
         display: none;
     }
 
@@ -1263,6 +1556,7 @@ header.header::before {
 
     .main_container {
         display: flex;
+        justify-content: space-between;
         margin: 35px auto -5px;
         max-width: 768px;
     }
@@ -1273,14 +1567,17 @@ header.header::before {
         max-width: 310px;
         width: 100%;
         margin-bottom: 40px;
+        max-height: 57px;
+        overflow: hidden;
     }
 
     .banner_btn {
-        width: 290px;
+        max-width: 290px;
         background-size: cover;
         height: 62px;
         font-size: 14px;
         padding-top: 0;
+        margin-bottom: 32px;
     }
 
     .banner_btn::before {
@@ -1292,10 +1589,8 @@ header.header::before {
     }
 
     .banner_list {
-        max-width: 535px;
-        max-width: 968px;
         width: 100%;
-        max-height: 186px;
+        max-height: 400px;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
@@ -1339,7 +1634,7 @@ header.header::before {
 
     .banner_list-card {
         max-width: 317px;
-        margin-bottom: 40px;
+        margin-bottom: 5.2vw;
         margin-right: 18px;
         display: flex;
     }
@@ -1358,11 +1653,13 @@ header.header::before {
         font-size: 40px;
         line-height: 36px;
         max-width: 640px;
+        margin-bottom: 32px;
     }
 
     .employee_undertitle {
         font-size: 16px;
         line-height: 19px;
+        margin-bottom: 60px;
     }
 
     .slider {
@@ -1387,7 +1684,7 @@ header.header::before {
 
     .slide_about {
         max-width: 165px;
-
+        margin-bottom: 24px;
         font-size: 14px;
         height: 100%;
         line-height: 17px;
@@ -1412,7 +1709,7 @@ header.header::before {
     }
 
     .slick-dots {
-        top: 572px;
+        top: 520px;
     }
 
     .slick-prev.slick-arrow, .slick-next.slick-arrow {
@@ -1446,7 +1743,7 @@ header.header::before {
 
     .main_services_container {
         max-width: 650px;
-        margin-bottom: 80px;
+        margin-bottom: 70px;
 
     }
 
@@ -1482,23 +1779,29 @@ header.header::before {
 }
 
 
-
-
-@media (max-width: 414px) {
-    body {
-        overflow-x: hidden;
+@media (max-width:600px){
+    .banner_btn{
+        height: 10.33vw;
+        font-size: 2.333vw;
+        background-size: contain;
     }
+    .banner_btn::before {
+        margin-left: -15px;
+    }
+}
+
+@media (max-width: 375px) {
+
 
     header.header {
-        margin: 0px 24px;
-        max-width: 350px;
+        max-width: 327px;
 
 
     }
 
-    .header_container {
+    .container {
         margin: 8px auto 15px;
-        max-width: 350px;
+        max-width: 327px;
     }
 
     .header_about {
@@ -1564,6 +1867,10 @@ header.header::before {
         margin-top: 10px;
     }
 
+    .dropdown button {
+        display: block;
+    }
+
 
 
     .dropbtn:hover, .dropbtn:focus {
@@ -1578,163 +1885,14 @@ header.header::before {
         margin-top: 15px;
     }
 
-    .dropdown-content {
-        height: 100vh;
-        left: 0;
-        position: fixed;
-        top: 0;
-        transform: translateX(-100%);
-        transition: 0.5s;
-        transition-delay: 0s;
-        z-index: 15;
-        min-width: 350px;
-
-    }
-
-    header.header::before {
-        display: none;
-    }
-
-    .dropdown-content.show {
-        overflow: auto;
-        transform: translateX(0%);
-        background: #fff;
-        position: fixed;
-        box-shadow: 0px 4px 18px 0px #0000000F;
-    }
-
-    .dropdown-content.show::-webkit-scrollbar {
-        width: 3px;
-    }
-
-    .dropdown-content.show::-webkit-scrollbar-thumb {
-        background: linear-gradient(90deg, #FFA400 0%, #FFCC00 100%);
-        border-radius: 20px;
-        border: 1px solid orange;
-    }
-
-    .dropdown-content a {
-        position: relative;
-        color: black;
-        padding: 24px 0 24px 54px;
-        font-size: 14px;
-        line-height: 17px;
-        font-weight: 500;
-        text-decoration: none;
-        display: block;
-        border-bottom: 1px solid #E5E5E5;
-    }
-
-    .dropdown-content a::after {
-        content: '';
-        position: absolute;
-        background-image: url(./../img/header/header-arrow.png);
-        background-repeat: no-repeat;
-        width: 10px;
-        height: 6px;
-        margin-left: 10px;
-        margin-top: 5px;
-    }
-
-    .dropdown-content a:nth-child(2)::before {
-        content: '';
-        position: absolute;
-        background-image: url(./../img/header/header-apple.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 15px;
-        height: 100%;
-        margin-left: -27px;
-        margin-top: -2px;
-    }
-
-    .dropdown-content a:nth-child(3)::before {
-        content: '';
-        position: absolute;
-        background-image: url(./../img/header/header-smartphone.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 19px;
-        height: 100%;
-        margin-left: -27px;
-        margin-top: -2px;
-    }
-
-    .dropdown-content a:nth-child(4)::before {
-        content: '';
-        position: absolute;
-        background-image: url(./../img/header/header-tablet.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 19px;
-        height: 100%;
-        margin-left: -27px;
-        margin-top: -2px;
-    }
-
-    .dropdown-content a:nth-child(5)::before {
-        content: '';
-        position: absolute;
-        background-image: url(./../img/header/header-notebook.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 19px;
-        height: 100%;
-        margin-left: -27px;
-        margin-top: -2px;
-    }
-
-    .dropdown-content a:nth-child(6)::before {
-        content: '';
-        position: absolute;
-        background-image: url(./../img/header/header_console.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 19px;
-        height: 100%;
-        margin-left: -27px;
-        margin-top: 2px;
-    }
-
-    .menu_header {
-        padding: 15px 0 0 24px;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 29px;
-        margin-bottom: 32px;
-        position: relative;
-    }
-
-    .menu_header::after {
-        position: absolute;
-        content: '';
-        background-image: url(./../img/menu/close.png);
-        background-repeat: no-repeat;
-        width: 24px;
-        height: 100%;
-        right: 10px;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #ddd
-    }
-
-
     .show {
         display: block;
     }
-
-
-
-
 
     .header_menu {
         display: none;
 
     }
-
-
-
 
     .banner_title {
         max-width: 160px;
@@ -1760,12 +1918,12 @@ header.header::before {
         line-height: 17px;
         max-width: 180px;
         margin-bottom: 32px;
-        height: 69px;
+        max-height: 85px;
         overflow: hidden;
     }
 
     .banner_btn {
-        width: 327px;
+        max-width: 340px;
         background-size: cover;
         height: 62px;
         font-size: 14px;
@@ -1774,12 +1932,13 @@ header.header::before {
     }
 
     .banner_list {
-        max-width: 535px;
+        max-width: 327px;
         width: 100%;
         max-height: 186px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .banner_image {
@@ -1807,9 +1966,10 @@ header.header::before {
         background-repeat: no-repeat;
         background-size: cover;
         height: 81px;
-        width: 90%;
-        top: 245px;
+        width: 100%;
+        top: 270px;
         left: auto;
+        margin-top: 25px;
     }
 
     .banner_list {
@@ -1840,13 +2000,13 @@ header.header::before {
     }
 
     .main_employee {
-        padding-top: 185px;
+        padding-top: 240px;
         background: transparent;
     }
 
     .main_employee_container {
         margin: 0px auto 20px;
-        max-width: 350px;
+        max-width: 327px;
     }
 
     .employee_title {
